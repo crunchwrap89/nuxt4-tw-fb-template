@@ -18,18 +18,30 @@ A modern, high-performance starter template featuring Nuxt 4, Tailwind CSS, and 
 Make sure to install dependencies:
 
 ```bash
-# yarn (recommended)
+# yarn 
 yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# bun
-bun install
 ```
+
+### Firebase Setup
+
+```
+- Go to FB Project → RTDB → Enable RTDB → Select region → Start in Test mode.
+- Go to FB Project → Firestore → Enable Firestore → Select region → Start in Test mode.
+- Go to Project Overview → Add App → Web → Name App → Retrieve API Keys.
+- Add API Keys in .env.example and rename to .env
+```
+
+```
+- Go to FB Project → Auth → Enable Auth → Email/Password enable. & Google Provider enable.
+- Auth → Settings → Authorized domains → Add
+- Next steps for Custom auth domain: https://medium.com/@citi_zen/quick-guide-setting-up-google-oauth2-login-with-a-custom-domain-in-firebase-auth-fc86c328682d
+```
+
+```
+- Project settings → Service accounts → Generate service account key → add to service-account.json
+```
+
+
 
 ## Development
 
