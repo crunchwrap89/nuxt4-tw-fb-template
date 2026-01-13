@@ -27,6 +27,7 @@ yarn install
 ```
 - Go to FB Project → RTDB → Enable RTDB → Select region → Start in Test mode.
 - Go to FB Project → Firestore → Enable Firestore → Select region → Start in Test mode.
+
 - Go to Project Overview → Add App → Web → Name App → Retrieve API Keys.
 - Add API Keys in .env.example and rename to .env
 ```
@@ -41,19 +42,7 @@ yarn install
 - Project settings → Service accounts → Generate service account key → add to service-account.json
 ```
 
-
-
-## Development
-
-### Environment Variables
-
-Copy `.env.example` to `.env` and fill in your Firebase credentials:
-
-```bash
-cp .env.example .env
-```
-
-### Development Server
+## Development Server
 
 Start the development server on `http://localhost:3000`:
 
@@ -85,19 +74,5 @@ Build the application for production:
 yarn build
 ```
 
-Locally preview production build:
-
-```bash
-yarn preview
-```
-
-## Docker
-
-You can also run the application using Docker:
-
-```bash
-# Build and run with docker-compose
-docker-compose up --build
-```
 
 Check out the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
