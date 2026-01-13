@@ -1,0 +1,5 @@
+User-agent: *
+
+Disallow: /which-days/**
+
+Sitemap: https://template.com/sitemap.xml

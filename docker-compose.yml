@@ -1,0 +1,36 @@
+services:
+
+  nginx:
+    image: crunchwrap89/template.com_nginx
+    container_name: nginx
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    ports:
+      - '80:80'
+      - '443:443'
+    depends_on:
+      - nuxt
+    volumes:
+      - /etc/letsencrypt/live/template.com/:/etc/letsencrypt/live/template.com/
+      - /etc/letsencrypt/:/etc/letsencrypt
+
+  nuxt:
+    image: crunchwrap89/template.com_nuxt
+    container_name: nuxt
+    env_file:
+      - .env
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+    ports:
+      - '3000:3000'
+    restart: always
+    volumes:
+      - ./service-account.json:/app/service-account.json
