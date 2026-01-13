@@ -6,31 +6,36 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@vueuse/nuxt',
     '@nuxt/content',
+    'nuxt-vuefire',
     '@nuxtjs/sitemap',
     '@vite-pwa/nuxt',
     '@nuxt/test-utils/module',
     '@nuxt/test-utils'],
   ssr: true,
   devtools: { enabled: true },
+  runtimeConfig: {
+    apiKey: '',
+    authDomain: '',
+    projectId: '',
+    appId: '',
+  },
   app: {
     head: {
-      title: 'Template title',
+      title: 'template-title-placeholder',
       meta: [
         {
           name: 'description',
-          content:
-              'Template description, please fill in with something relevant and with optimized amount of words for SEO.',
+          content: 'template-description-placeholder',
         },
         {
           name: 'keywords',
-          content:
-              'add, 10-20, relevant, keywords, here, separated, by, commas',
+          content: 'template-keywords-placeholder',
         },
         { name: 'og:type', content: 'website' },
         { name: 'og:url', content: 'https://template.com' },
         {
           name: 'og:title',
-          content: 'Template title',
+          content: 'template-title-placeholder',
         },
         {
           name: 'og:image',
@@ -38,22 +43,20 @@ export default defineNuxtConfig({
         },
         {
           name: 'og:description',
-          content:
-              'Template description, please fill in with something relevant and with optimized amount of words for SEO.',
+          content: 'template-description-placeholder',
         },
         {
           name: 'og:site_name',
-          content: 'Template title',
+          content: 'template-title-placeholder',
         },
         { name: 'twitter:site', content: '@crunchwrap89' },
         {
           name: 'twitter:title',
-          content: 'Template title',
+          content: 'template-title-placeholder',
         },
         {
           name: 'twitter:description',
-          content:
-              'Template description, please fill in with something relevant and with optimized amount of words for SEO.',
+          content: 'template-description-placeholder',
         },
         {
           name: 'twitter:image:src',
@@ -69,7 +72,7 @@ export default defineNuxtConfig({
         },
         {
           name: 'forem:name',
-          content: 'Template title',
+          content: 'template-title-placeholder',
         },
         {
           name: 'forem:logo',
@@ -119,17 +122,24 @@ export default defineNuxtConfig({
     },
     workbox: {
       maximumFileSizeToCacheInBytes: 50 * 1024 * 1024, // 50MB
-      globPatterns: ['**/*.{glb,css,webp,png,svg,webmanifest,ico,js,mjs,cjs,txt}'],
+      globPatterns: ['**/*.{glb,css,webp,webm,png,svg,webmanifest,ico,js,mjs,cjs,txt}'],
       globIgnores: [
         '/_payload.json',
         '/node_modules',
       ],
       navigateFallback: null,
+      cleanupOutdatedCaches: true,
+    },
+    devOptions: {
+      enabled: true,
+      suppressWarnings: true,
+      navigateFallbackAllowlist: [/^\/$/],
+      type: 'module',
     },
     manifest: {
       name: 'template.com',
       short_name: 'template.com',
-      description: 'Template description, please fill in with something relevant and with optimized amount of words for SEO.',
+      description: 'template-description-placeholder',
       lang: 'en',
       background_color: '#F1F1F1',
       theme_color: '#F1F1F1',
@@ -204,6 +214,25 @@ export default defineNuxtConfig({
           purpose: 'maskable',
         },
       ],
+    },
+  },
+  vuefire: {
+    emulators: {
+      enabled: true,
+      auth: {
+        options: {
+          disableWarnings: true,
+        },
+      },
+    },
+    auth: {
+      enabled: true,
+    },
+    config: {
+      apiKey: process.env.NUXT_API_KEY,
+      authDomain: process.env.NUXT_AUTH_DOMAIN,
+      projectId: process.env.NUXT_PROJECT_ID,
+      appId: process.env.NUXT_APP_ID,
     },
   },
   sitemap: {

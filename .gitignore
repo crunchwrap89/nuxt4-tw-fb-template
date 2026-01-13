@@ -17,8 +17,10 @@ logs
 .DS_Store
 .fleet
 .idea
+!.idea/runConfigurations
 
 # Local env files
 .env
 .env.*
 !.env.example
+service-account.json

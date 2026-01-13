@@ -3,8 +3,8 @@ import { queryCollection } from '@nuxt/content/server';
 
 export default defineEventHandler(async (event) => {
   const feed = new RSS({
-    title: 'template.com | A fitting template title',
-    description: 'A brief description about this website with optimized SE .',
+    title: 'template-title-placeholder',
+    description: 'template-description-placeholder',
     site_url: 'https://template.com',
     feed_url: `https://template.com/rss.xml`,
   });

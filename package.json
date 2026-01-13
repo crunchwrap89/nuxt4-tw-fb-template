@@ -10,10 +10,15 @@
     "typecheck": "nuxi typecheck",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
+    "emulate": "firebase emulators:start --import ./emulator --export-on-exit ./emulator",
     "test": "vitest"
   },
   "dependencies": {
     "@nuxt/content": "^3.9.0",
+    "firebase": "^12.6.0",
+    "firebase-admin": "^13.6.0",
+    "nuxt-vuefire": "^1.1.0",
+    "vuefire": "^3.2.2",
     "@nuxt/eslint": "^1.12.1",
     "@nuxt/image": "^2.0.0",
     "@nuxt/test-utils": "^3.21.0",
