@@ -137,8 +137,8 @@ export default defineNuxtConfig({
       type: 'module',
     },
     manifest: {
-      name: 'template.com',
-      short_name: 'template.com',
+      name: 'template-projectname-placeholder',
+      short_name: 'template-shortname-placeholder',
       description: 'template-description-placeholder',
       lang: 'en',
       background_color: '#F1F1F1',
